@@ -12,10 +12,11 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header"><h2>{{ __('Edit Sales Representative') }}</h2>
-                @if(Session::has('team_update'))
+               <h4> @if(Session::has('team_update'))
 <span>{{Session::get('team_update')}}</span>
-@endif
+@endif</h4>
                 <div class="card-body">
+                
                 <form method="post" action="{{route('update.team')}}">
                         @csrf
                         <input type="hidden" name="id" value="{{$team->id}}">
@@ -102,8 +103,9 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Save') }}
+                                    {{ __('Save Details') }}
                                 </button>
+                                
                             </div>
                         </div>
                     </form>
