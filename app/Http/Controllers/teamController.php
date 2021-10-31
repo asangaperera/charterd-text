@@ -22,7 +22,7 @@ class teamController extends Controller
          'Comments'=>$request->Comments
 
      ]);
-     return back()->with('post','Add Details Successfully');
+     return back()->with('post','Member Added Successfully');
     }
     public function team()
     {  $teams = DB::table('teams')->get();
