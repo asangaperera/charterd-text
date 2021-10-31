@@ -1,9 +1,5 @@
 
 
-
-
-    
-
 @extends('layouts.app')
 
 @section('content')
@@ -11,11 +7,8 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><h2>Member:-{{$team->FullName}}</h2>
-                @if(Session::has('team_update'))
-<span>{{Session::get('team_update')}}</span>
-@endif
-                <div class="card-body">
+                <div class="card-header"><h2>{{$team->FullName}}</h2>
+               <div class="card-body">
                 <form method="get" action="{{route('team')}}">
                         @csrf
                         <input type="hidden" name="id" value="{{$team->id}}">
@@ -25,11 +18,6 @@
                             <div class="col-md-6">
                                 <input id="FullName"  class="form-control @error('FullName') is-invalid @enderror" name="FullName" value="{{$team->FullName}}" required autocomplete="FullName" autofocus>
 
-                                @error('FullName')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
                             </div>
                         </div>
                         <div class="form-group row">
