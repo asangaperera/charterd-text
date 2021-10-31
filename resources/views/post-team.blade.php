@@ -10,11 +10,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
+            
                 <div class="card-header">{{ __('Add New Members') }}
                 @if (Route::has('team'))
-    <a href="{{ route('team') }}"  class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Member List</a>
                         @endif</form><br></div></div>
                 <div class="card-body">
+              <h4>  @if(Session::has('post'))
+<span>{{Session::get('post')}}</span>
+@endif</h4>
                     <form method="POST" action="{{route('save.team')}}">
                         @csrf
 
